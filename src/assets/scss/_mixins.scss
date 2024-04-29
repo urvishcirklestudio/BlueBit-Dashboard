@@ -1,0 +1,12 @@
+@import '../../assets/scss/themeVariable.scss';
+
+@mixin card(){
+    background-color: var(--cardColor);
+    box-shadow: var(--cardShadow);
+    border: 1px solid var(--cardBorder);
+    border-radius: 5px;
+}
+@mixin LabelColor($color,$opacity){
+    color: $color;
+    background-color: rgba(lighten($color, $opacity), 1);
+}

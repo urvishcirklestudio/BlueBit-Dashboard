@@ -1,0 +1,70 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/themeVariable";
+
+.card {
+    height: 100%;
+    padding: 24px;
+    color: var(--textColor2);
+    @include card;
+
+    .card-heading{
+        display: flex; 
+        justify-content: space-between;
+        .heading-wpr{
+            flex: 1;
+            margin-right: 10px;
+            h5{
+                color: var(--textColor1);
+                font-weight: 400;
+            }
+            p{
+                font-size: 1.4rem;
+                margin-top: 5px;
+            }
+        }
+        .ActionDropDown {
+            .dropdown-toggle{
+                padding: 5px;
+                color: var(--textColor2);
+                height: 36px;
+                width: 36px;
+                border-radius: 50%;
+                border-color: transparent;
+                &::after {
+                    content: none;
+                }
+                &:hover{
+                    background-color: var(--hoverColor);
+                }
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .dropdown-menu{
+                background-color: var(--cardColor);
+                border: 1px solid var(--cardBorder);
+                box-shadow: var(--cardShadow);
+                font-size: 1.4rem;
+                .dropdown-item{
+                    padding: 6px 14px;
+                    color: var(--textColor2);
+                    &:hover{
+                        background-color: var(--hoverColor);
+                        color: var(--textColor1);
+                    }
+                    &:focus{
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+            }
+        }
+    }
+    .card-body{
+        flex: 1;
+        margin-top: 10px;
+        padding: 0;
+    }
+  }

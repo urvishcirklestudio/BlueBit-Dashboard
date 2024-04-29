@@ -1,0 +1,128 @@
+@import 'assets/scss/mixins'; 
+ 
+
+.sidebar{
+    padding: 10px;
+    max-width: 330px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // transition: 0.3s;
+    overflow: hidden;
+    z-index: 999;
+    transition: padding 0.3s, max-width 0.3s;
+}
+.container,
+.container-fluid{
+    padding: 0 4px;
+}
+.layout_page{
+    .wrapper{
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+
+
+@media screen and (min-width:1400px){
+    // abc{
+    //     color:#FFC300
+    // }
+    .layout_page{
+        .wrapper{
+            max-width: calc(100vw - 330px);
+            width: 100%;
+            margin-left: 330px;
+            transition: all 0.3s ease-in-out;
+    
+            .container{
+                padding: 0 15px;
+            }
+            .container-fluid{
+                padding: 0 30px;
+            }
+        }
+        &.menu_collapsed .wrapper{
+            max-width: calc(100vw - 60px);
+            margin-left: 60px;
+        }
+    
+        .page_setting_btn{
+            padding: 2px;
+            border: 0;
+            width: 45px;
+            height: 45px;
+            background-color: $primary;
+            color: $white;
+            transition: 0.3s;
+            border-radius: 4px 0 0 4px;
+            position: fixed;
+            top: 30%;
+            right: 0;
+            padding: 12px;
+            &:hover,&:active{ 
+                background-color: $primary-hover;
+            }
+        }
+    }
+.menu_collapsed .sidebar{
+    &:not(:hover){ 
+        padding: 6px;
+        max-width: 60px; 
+        .tab_group .main_link_wpr .heading{
+            height: 0;
+            padding: 0;
+            margin: 0;
+            visibility: hidden;
+        }
+    }
+}
+}
+@media screen and (max-width:1399px){
+    .sidebar{
+        max-width: 350px;
+        position: fixed;
+        left: -200%;
+        transition: 0.2s;
+        &.active{
+            left: 0;
+        }
+        .collapsed_icon{
+            display: none;
+        }
+        .close_icon{
+            width: 20px;
+            display: flex;
+        }
+    }
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--loader-bg);
+        display: none;
+        z-index: 998;
+        &.active{
+            display: block;
+        }
+    }
+}
+@media screen and (max-width:767px){
+    .sidebar{
+        max-width: 60%;
+    }
+}
+@media screen and (max-width:575px){
+    .sidebar{
+        max-width: 100%;
+    }
+    header .header-wpr { 
+        padding: 1rem;
+    }
+}
+

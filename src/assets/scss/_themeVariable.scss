@@ -1,0 +1,60 @@
+:root {
+  --white: #ffffff; 
+  --light-sky:#274c62;
+  --light-green:#2e4b4f;
+  --light-purple:#3a3b64 ;
+  --light-purple:#504448 ; 
+}
+$white: #ffffff; 
+$primary:#7367f0;
+$secondary:#161719;
+$info:#00cfe8;
+$danger:#ea5455;
+$warning:#ff9f43;
+$sucess:#28ce6f;
+$primary-hover:#6255f8;
+$light-primary:#3a3b64 ;
+$light-danger:#504448 ;
+$light-info:#274c62;
+$light-sucess:#2e4b4f;
+$light-warning:#85623f;
+// $light-warning:#7267f080;
+// $light-warning:#7267f03d;
+
+body ,
+body.lightTheme {
+  --bgColor: #f8f7fa;
+  --navbarBg: #ffffff;
+  --nav-heading:#93909e;
+  --cardColor: #ffffff;
+  --cardBorder: #ffffff;
+  --headingColor: #5d596d;
+  --textColor1: #6f6b7d;
+  --textColor2: #a5a3ae;
+  --hoverColor: #f8f8f8;
+  --borderColor: #dbdade;
+  --cardShadow: 0 0.25rem 1.125rem rgba(75, 70, 92, 0.1);
+  --semi_navbarBg: #1e2038; 
+  --badge-bg-color:#eae8fd;
+  --loader-bg:#03001cad;
+  --text-muted:#7983bb; 
+}
+  
+body.darkTheme {
+  --bgColor:#25293C; 
+  --navbarBg:#2F3349;
+  --nav-heading:#949bbd;
+  --cardColor:#2F3349; 
+  --cardBorder:#2F3349;
+  --headingColor:#cfd3ec; 
+  --textColor1:#b6bee3; 
+  --textColor2:#7983bb; 
+  --hoverColor:#8692d00f;
+  --borderColor:#434968;
+  --cardShadow: 0 .25rem 1.25rem rgba(15,20,34,.4);
+  --semi_navbarBg:#161931; 
+  --badge-bg-color:#3a3b64;
+  --loader-bg:#292d4bc9;  
+
+}
+

@@ -1,0 +1,12 @@
+@import '../../assets/scss/themeVariable.scss';
+.mainToster{
+    .Toastify__toast--success{
+        background-color: $sucess;
+    }
+    .Toastify__toast--error{
+        background-color: $danger;
+    }
+    .Toastify__toast--info{
+        background-color: $primary;
+    }
+}

@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "assets/scss/themeVariable";
+@import "assets/scss/mixins";
+
+*,
+.row {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  background-color: var(--bgColor);
+  color: var(--textColor1);
+}
+
+body.border-theme {
+  --bgColor: var(--navbarBg);
+  --cardShadow: inherit;
+  --cardBorder: var(--borderColor);
+}
+
+body.semi-dark {
+  --navbarBg: var(--semi_navbarBg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.container,
+.container-fluid {
+  transition: 0.3s;
+}
+.container-fluid {
+  padding: 0 30px;
+  max-width: 100%;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+
+body.lightTheme {
+  .bg-label-primary {
+    color: $primary;
+    background-color: lighten($primary, 28);
+  }
+  .bg-label-info {
+    color: $info;
+    background-color: lighten($info, 45);
+  }
+  .bg-label-danger {
+    color: $danger;
+    background-color: lighten($danger, 45);
+  }
+  .bg-label-warning {
+    color: $warning;
+    background-color: lighten($warning, 45);
+  }
+  .bg-label-sucess {
+    color: $sucess;
+    background-color: lighten($sucess, 45);
+  }
+}
+body.darkTheme {
+  .bg-label-primary {
+    color: $primary;
+    background-color: $light-primary;
+  }
+  .bg-label-info {
+    color: $info;
+    background-color: $light-info;
+  }
+  .bg-label-danger {
+    color: $danger;
+    background-color: $light-danger;
+  }
+  .bg-label-warning {
+    color: $warning;
+    background-color: $light-warning;
+  }
+  .bg-label-sucess {
+    color: $sucess;
+    background-color: $light-sucess;
+  }
+}
+
+@import "App.scss";
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 8px;
+  }
+  h3 {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 575px) {
+}

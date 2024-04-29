@@ -1,0 +1,105 @@
+@import '../../assets/scss/themeVariable.scss';
+
+.setting_bar{
+    background-color: var(--bgColor);
+    color: var(--textColor1);
+    .offcanvas-header {
+        border-color: var(--borderColor) !important;
+        .offcanvas-title{
+            flex: 1;
+            margin-right: 10px;
+            h4{
+                color: var(--headingColor); 
+            } 
+        }
+        .offcanvas-icons{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            .btn{
+                padding: 0;
+                height: 22px;
+                width: 22px;
+                color: var(--textColor1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg{
+                    width: 100%;
+                    height: 100%;
+                }
+                &.close-btn{
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    .offcanvas-body{
+        padding: 0;
+        .setting_form{
+            .settings_wpr{
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid $primary;
+                }
+            }
+            .badge_heading{
+                span{
+                    background-color: var(--badge-bg-color) ;
+                    color: $primary;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .opt_step { 
+                &:not(:last-child){
+                    margin-bottom: 20px;
+                }
+                .opt_wpr .opt_ul {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-content: center;
+                    gap: 10px;
+                    .opt_items label{
+                        width: 100%;
+                        cursor: pointer; 
+                        .box{
+                            border: 1px solid var(--borderColor);
+                            border-radius: 5px;
+                            width: 100%;
+                            height: 70px;
+                            display: grid;
+                            place-items: center;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                            svg{
+                                height: 24px;
+                                width: 24px;
+                            }
+                        }
+                        input{
+                            display: none;
+                        }
+
+                        &:has(input[type="radio"]:checked){
+                           color: $primary;
+                           .box{
+                                border-color: $primary;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body.semi-dark.lightTheme .layout_page .sidebar{
+    --hoverColor:#8692d00f;
+}
