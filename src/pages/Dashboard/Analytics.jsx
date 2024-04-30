@@ -224,7 +224,7 @@ function Analytics() {
           </Card>
         </div>
 
-        <div className="mt-4 col-12 col-md-6 col-lg-4">
+        <div className="mt-4 col-12 col-md-6 col-xl-4">
           <Card className='sale_by_country'>
             <CardsHeading>
               <h5>Sales by Countries</h5>
@@ -257,7 +257,7 @@ function Analytics() {
           </Card>
         </div>
 
-        <div className="mt-4 col-12 col-md-6 col-lg-4">
+        <div className="mt-4 col-12 col-md-6 col-xl-4">
           <Card className='TotalEarnigs'>
             <CardsHeading>
               <h5>Total Earning</h5> 
