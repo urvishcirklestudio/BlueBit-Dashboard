@@ -1,14 +1,28 @@
 @import '../../assets/scss/themeVariable.scss';
+@import '../../assets/scss/mixins.scss';
 .analytics_dashboard{
     .webanalytics_slider{
         background-color: $primary;
         color: $white;
+        display: grid;
+        align-content: center;
         .analytics_slide_items{
-            padding: 24px;
+            padding: 24px; 
+            @include mediaMax(1280) {
+                padding: 18px;
+            }
+            .slide_items_cont{
+                @include mediaMax(575) {
+                    padding: 0;
+                }
+            }
             .image_box{
                 width: 100%;
                 height: 100%;
-                position: relative; 
+                position: relative;  
+                @include mediaMax(575) {
+                    height: 150px;
+                }
                 img{
                     position: absolute;
                     top: 0;
@@ -18,16 +32,30 @@
                     object-fit: contain;
                 }
             }
+            .heading {
+                h3{ 
+                    @include mediaMax(1500) {
+                        font-size: 2.8rem;
+                    }
+                }
+            }
         }
         .revenue_sources_wpr{
             margin-top: 20px;
+            .title h4{
+                @include mediaMax(1280) {
+                    font-size: 1.8rem;
+                }
+            }
         }
-
         .sources_grp_wpr {
-            gap: 25px 0;
+            gap: 25px 10px;
+            grid-template-columns: repeat(2, 1fr);
+            
             .sources_items{
                 font-size: 14px;
                 gap: 10px;
+                width: auto;
                 .number_label{
                     background-color: #6258cc;
                     border-radius: 4px;
@@ -39,100 +67,132 @@
             }
         }
     }  
-    .sales_overview{
-        .heading{
-            .card_name{
-                font-size: 14px;
-                color: var(--textColor2);
-                .rating{
-                    color: $sucess;
-                }
-            }
-            .earning{
-                color: var(--headingColor); 
-                font-size: 2.6rem; 
-            }
+    .SalesRevenue{
+        @include media(576,991) { 
+            margin: 0 -10px;
         }
-        .sales_grp{
-            margin-top: 20px;
-            .line_div{
-                width: 1px;
-                background-color: var(--borderColor);
+        @include mediaMin(992) { 
+            height: 100%;
+        }
+        .SalesRevenue_items{
+            @include mediaMax(575) { 
+                padding: 0;
             }
-            .sales_items{
-                max-width: calc(50% - 6px);
-                width: 100%;
-                .title{
-                    font-size: 1.8rem;
-                    color: var(--textColor1);
-                    gap: 8px;
-                    .icons{
-                        height: 26px;
-                        width: 26px;
-                        border-radius: 4px;
-                        display: flex;
-                        padding: 4px;
-
-                        // background-color: ;
-                    }
-                    p{
-                        flex: 1; 
+            &:first-child{
+                @include mediaMax(575) { 
+                    margin-bottom: 12px;
+                }
+            }
+        } 
+        .sales_overview{
+            .heading{
+                .card_name{
+                    font-size: 14px;
+                    color: var(--textColor2);
+                    .rating{
+                        color: $sucess;
                     }
                 }
-                .percentage{
+                .earning{
+                    color: var(--headingColor); 
+                    font-size: 2.6rem; 
+                    @include mediaMax(1280) {
+                        font-size: 2.2rem;
+                    }                 
+                }
+            }
+            .sales_grp{
+                margin-top: 20px;
+                @include mediaMax(1280) {
+                    margin-top: 16px; 
+                }
+                .line_div{
+                    width: 1px;
+                    background-color: var(--borderColor);
+                }
+                .sales_items{
+                    max-width: calc(50% - 6px);
+                    width: 100%;
+                    .title{
+                        font-size: 1.8rem;
+                        color: var(--textColor1);
+                        gap: 8px; 
+                        .icons{
+                            height: 26px;
+                            width: 26px;
+                            border-radius: 4px;
+                            display: flex;
+                            padding: 4px; 
+                        }
+                        p{flex: 1; }
+                    }
+                    .percentage{
+                        color: var(--headingColor);
+                        margin: 14px 0 5px; 
+                    }
+                    .total{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+            .progress_grp{
+                gap: 8px;
+                margin-top: 10px;
+                @include mediaMax(1280) {
+                    gap: 12px;
+                    margin-top: 14px;
+                }
+                .progress{
+                    height: 8px;
+                    background-color: var(--borderColor);
+                    &.order_progress .progress-bar{
+                        background-color: $primary;
+                    }
+                    &.visit_progress .progress-bar{
+                        background-color: $info;
+                    }
+                }
+            }
+        } 
+        .revenue_generated{
+            justify-content: space-between;
+            .top_wpr{
+                .icons{
+                    height: 36px;
+                    width: 36px;
+                    overflow: hidden;
+                    padding: 6px;
+                    border-radius: 50%;
+                }
+                .earnings{
                     color: var(--headingColor);
-                    margin: 14px 0 5px;
+                    margin: 10px 0 2px;
                 }
-                .total{
+                .title{
                     font-size: 1.4rem;
                 }
             }
-        }
-        .progress_grp{
-            gap: 8px;
-            margin-top: 10px;
-            .progress{
-                height: 8px;
-                background-color: var(--borderColor);
-                &.order_progress .progress-bar{
-                    background-color: $primary;
-                }
-                &.visit_progress .progress-bar{
-                    background-color: $info;
-                }
+            .chart_wpr{
+                // width: calc(100% + 48px);
+                // margin: 0 0 -26px -24px;
             }
         }
-    } 
-    .revenue_generated{
-        justify-content: space-between;
-        .top_wpr{
-            .icons{
-                height: 36px;
-                width: 36px;
-                overflow: hidden;
-                padding: 6px;
-                border-radius: 50%;
-            }
-            .earnings{
-                color: var(--headingColor);
-                margin: 10px 0 2px;
-            }
-            .title{
-                font-size: 1.4rem;
-            }
-        }
-        .chart_wpr{
-            // width: calc(100% + 48px);
-            // margin: 0 0 -26px -24px;
-        }
-    }
+    }   
     .earningChart{
         .ChartWpr{
-            
             .income{
+                @include media(992, 1280) { 
+                    display: block !important;
+                } 
+                // @include mediaMax(575) { 
+                //     display: block !important;
+                // } 
                 h2{ 
                     // font-size: 3.8rem;
                     color: var(--headingColor);
+                    @include mediaMax(1280) {
+                        font-size: 3rem;
+                    } 
                 }
                 .rating{
                     padding: 6px 8px;
@@ -140,12 +200,108 @@
                     line-height: 1;
                     border-radius: 4px;
                     margin-left: 5px;
+                    @include media(992, 1280) { 
+                        display: inline-block;
+                        margin: 8px 0 0 ;
+                    } 
+                    @include mediaMax(575) { 
+                        display: inline-block;
+                        margin-left: 10px ;
+                    } 
                 }
             }
-            .desc{
+            .desc{ 
                 margin-top: 1rem;
                 font-size: 1.4rem;
                 line-height: 1.6rem;
+            }
+            .report_wpr{
+                border: 1px solid var(--borderColor);
+                border-radius: 4px;
+                padding: 14px;
+                gap: 4rem; 
+                @include mediaMin(576){ 
+                    gap: 4rem; 
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                @include mediaMax(768){ 
+                    gap: 2rem; 
+                } 
+                .report_items{
+                    @include mediaMax(575){
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+                    .title{
+                        .icons{
+                            height: 26px;
+                            width: 26px;
+                            border-radius: 4px;
+                            padding: 5px;
+                            
+                        }
+                        p{
+                            flex: 1;
+                            font-weight: 500;
+                            color: var(--textColor1);
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                    .report_price h4{
+                        font-size: 2.6rem;
+                        font-weight: 500;
+                        color: var(--textColor1);
+                        @include mediaMax(768){ 
+                            font-size: 2.2rem;
+                        } 
+                    }
+                    .progress{
+                        width: 100%;
+                        height: 4px;
+                        background-color: var(--borderColor);
+                        &.earning_progress .progress-bar{
+                            background-color: $primary;
+                        }
+                        &.profit_progress .progress-bar{
+                            background-color: $info;
+                        }
+                        &.expanse_progress .progress-bar{
+                            background-color: $danger;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ticketChart{
+        .total-ticket{
+            margin: 30px 0;
+            h2{color: var(--headingColor);}
+            p{color: var(--textColor1);}
+        }
+        .TicketsWpr{ 
+            gap: 16px;
+            .ticketsItems{
+                .icons{
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 4px;
+                    padding: 5px;
+                }
+                .ticketsCont{
+                    flex: 1;
+                    margin-left: 14px;
+                    p{
+                        color: var(--headingColor);
+                        font-weight: 500; 
+                    }
+                    span{
+                        font-size: 1.4rem;
+                    }
+                }
             }
         }
     }

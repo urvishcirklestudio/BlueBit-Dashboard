@@ -6,6 +6,9 @@
     padding: 24px;
     color: var(--textColor2);
     @include card;
+    @include mediaMax(1280) {
+        padding: 18px;
+    }
 
     .card-heading{
         display: flex; 

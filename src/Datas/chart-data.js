@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { redirect } from "react-router-dom"
+import { useSelector } from "react-redux";
+import { redirect } from "react-router-dom" 
  
-const red = () => {};
 export const RevenueGenerated={
   Earning:'97.5k',
   title:'Revenue Generated', 
@@ -71,7 +71,12 @@ const getCurrentColor = (color) =>{
 }
 export const EarningReport={
   weekEarnings:468,
-  EarningsRatio:+4.2,
+  EarningsRatio:4.2,
+  WeeklyOverview:{
+    Earning:545.69,
+    Profit:256.34,
+    Expanse:74.19
+  },
   options: {
     chart: { 
       type: 'bar', 
@@ -137,6 +142,58 @@ export const EarningReport={
     },
      
   },  
+}
+
+export const TicketsReports={
+  TotalTicketValue:164,
+  WeeklyTicketReport:{
+    NewTicket:142,
+    OpenTicket:28,
+    ResponseTime:1 + 'Day',
+  },
+  options: {
+    chart: {
+      height: 350,
+      type: 'radialBar',
+      offsetY: -10
+    },
+    plotOptions: {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 135,
+        dataLabels: {
+          name: { 
+            color: undefined,
+            offsetY: 0
+          },
+          value: {
+            offsetY: 0,
+            fontSize: '24px',
+            fontWeight:600,
+            color: undefined,
+            formatter: function (val) {
+              return val + "%";
+            }
+          }
+        }
+      }
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+          shade: 'dark',
+          shadeIntensity: 0.15,
+          inverseColors: false,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 65, 91]
+      },
+    },
+    stroke: {
+      dashArray: 10
+    },
+    labels: ['Median Ratio'],
+  },
 }
 
  

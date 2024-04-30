@@ -2,7 +2,7 @@ import React from 'react'
 
 function CardBody({
     children,
-    className,
+    className='',
     ...props
 
 }) {

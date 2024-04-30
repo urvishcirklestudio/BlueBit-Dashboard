@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 
 
 function UeserDropDown() {
+    const {RegisterUser} = useSelector(state => state.authReducer)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const Logout= ()=>{
         dispatch(handleAuth(false))
         navigate('/')
     }
+ 
   return (
     <Dropdown className='userDropDown'>
         <Dropdown.Toggle  id="userDrop">
@@ -31,7 +33,7 @@ function UeserDropDown() {
                         <img src={UserImage} alt="user Image"/> 
                     </div>
                     <div className="userName">
-                        <h4 className='fw-bold'>John Doe</h4>
+                        <h4 className='fw-bold'>{`${RegisterUser.UserName.slice(0, 12)}${RegisterUser.UserName.length > 12?'...':''}`}</h4>
                         <p className='mt-1 fs-5 lh-1'>Admin</p>
                     </div>
                 </Dropdown.Item> 

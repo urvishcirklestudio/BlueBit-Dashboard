@@ -85,7 +85,10 @@ h5 {
 h6 {
   font-size: 1.6rem;
 }
-
+.row>*{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 body.lightTheme {
   .bg-label-primary {
