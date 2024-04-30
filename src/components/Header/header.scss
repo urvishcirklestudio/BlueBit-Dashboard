@@ -2,7 +2,7 @@
 @import '../../assets/scss/mixins'; 
 
 header{
-    padding-top: 10px;
+    padding-top: 10px !important;
     .header-wpr{
         @include card;
         padding:1rem 2rem;

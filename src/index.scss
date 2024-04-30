@@ -88,12 +88,19 @@ h6 {
 .row>*{
   padding-left: 10px;
   padding-right: 10px;
+  @include mediaMax(575){
+    padding: 0;
+  }
 }
 
 body.lightTheme {
   .bg-label-primary {
     color: $primary;
     background-color: lighten($primary, 28);
+  }
+  .bg-label-secondary {
+    color: $secondary;
+    background-color: lighten($secondary, 28);
   }
   .bg-label-info {
     color: $info;
@@ -117,6 +124,10 @@ body.darkTheme {
     color: $primary;
     background-color: $light-primary;
   }
+  .bg-label-secondary {
+    color: $secondary;
+    background-color: $light-secondary;
+  }
   .bg-label-info {
     color: $info;
     background-color: $light-info;
@@ -134,6 +145,12 @@ body.darkTheme {
     background-color: $light-sucess;
   }
 }
+.text-primary{color: $primary}
+.text-info{color: $info}
+.text-secondary{color: $secondary}
+.text-warning{color: $warning}
+.text-sucess{color: $sucess}
+.text-danger{color: $danger}
 
 @import "App.scss";
 

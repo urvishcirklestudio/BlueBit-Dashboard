@@ -279,11 +279,27 @@
     .ticketChart{
         .total-ticket{
             margin: 30px 0;
-            h2{color: var(--headingColor);}
+            @include mediaMax(767){
+                margin: 15px 0; 
+            }
+            h2{
+                color: var(--headingColor); 
+                @include mediaMax(575){
+                    font-size: 3rem;
+                }
+            }
             p{color: var(--textColor1);}
         }
         .TicketsWpr{ 
             gap: 16px;
+            @include media(768,991){
+                gap: 10px;
+                grid-template-columns:repeat(2, 1fr)
+            }
+            @include mediaMax(575){
+                gap: 15px;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
             .ticketsItems{
                 .icons{
                     height: 30px;
@@ -302,6 +318,125 @@
                         font-size: 1.4rem;
                     }
                 }
+            }
+        }
+    }
+
+    .sale_by_country{
+        .country_wpr{
+            max-height: 400px;
+            overflow-y: auto;
+            margin-right: -10px;
+            padding-right: 10px;
+            &::-webkit-scrollbar{ 
+                width: 5px;
+            } 
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--borderColor);
+                border-radius: 10px;
+                transition: 0.2s;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: var(--textColor2);
+            }
+            li{
+                gap: 10px;
+                grid-template-columns: auto 120px;
+                margin: 8px 0;
+                .country_left{
+                    .countryFlag{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        img{
+                            height: 100% !important;
+                            width: 100% !important;
+                            object-fit: cover;
+                        }
+                    }
+                    .countryCont{
+                        flex: 1;
+                        margin-left: 1.6rem;
+                        h6{
+                            font-size: 1.6rem;
+                            color: var(--headingColor);
+                        }
+                        p{
+                            font-size: 1.4rem;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                .country_sales{
+                    text-align: right; 
+                    .icons{ 
+                        height: 18px;
+                        width: 18px;
+                    }
+                    &.up{
+                        color: $sucess
+                    }
+                    &.down{
+                        color: $danger
+                    }
+                }
+            }
+        }
+    }
+
+    .TotalEarnigs{
+        .cardbody{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .earningTop{
+            h2{
+                color: var(--headingColor);
+            }
+            .EarningProgress{ 
+                font-size: 1.5rem;
+                .icons{ 
+                    height: 18px;
+                    width: 18px;
+                }
+                &.up{
+                    color: $sucess
+                }
+                &.down{
+                    color: $danger
+                }
+            }
+        }
+        .earningcounts{
+            li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            li{
+                grid-template-columns: auto 120px;
+                gap: 10px;
+                .earning_left{
+                    .icons{
+                        height: 26px;
+                        width: 26px;
+                        border-radius: 4px;
+                        padding: 5px;
+                    }
+                    .earningCont{
+                        flex: 1;
+                        margin-left: 1.6rem;
+                        h6{
+                            font-size: 1.6rem;
+                            color: var(--headingColor);
+                        }
+                        p{
+                            font-size: 1.4rem;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                
             }
         }
     }
