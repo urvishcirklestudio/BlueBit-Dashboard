@@ -61,6 +61,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @include mediaMax(767) {
+                max-width: 100%;
+            }
             .bluerit_logo{
                 height: 4rem;
                 width: 4rem;
